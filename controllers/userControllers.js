@@ -4,7 +4,7 @@ const {User} =require('../models/User.js')
 const jwt=require('jsonwebtoken');
 const secretKey =process.env.SECRET_KEY;
 function generateToken(userDetails) {
-  return jwt.sign(userDetails, secretKey,{expiresIn:'1h'});
+  return jwt.sign(userDetails, secretKey);
 }
 const addUser=async (req, res) => {
     try {
