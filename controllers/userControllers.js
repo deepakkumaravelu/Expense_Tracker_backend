@@ -13,7 +13,7 @@ const addUser=async (req, res) => {
         const user = await User.create({
           emailID: req.body.emailID,
           password: req.body.password,
-          user_name: req.body.user_name
+          user_name: req.body.userName
         });
         const userDetails = {
           userName: user.user_name,
