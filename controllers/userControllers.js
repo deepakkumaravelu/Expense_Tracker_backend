@@ -27,7 +27,7 @@ const addUser = async (req, res) => {
         try {
           const newUser = await User.create({
             emailID: req.body.emailID,
-            password: hash, // Store the hashed password
+            password: hash, 
             user_name: req.body.userName
           });
           
@@ -45,6 +45,7 @@ const addUser = async (req, res) => {
             accessToken: accessToken,
             userDetails: userDetails
           });
+          console.log("Completed creating user");
         } catch (error) {
           return res.status(500).json({
             status: "failure",
