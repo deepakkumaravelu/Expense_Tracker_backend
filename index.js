@@ -48,16 +48,14 @@ const cors = require("cors");
 const dotenv = require('dotenv');
 const express = require("express");
 const mongoose = require("mongoose");
-
 const app=express();
 const expenseRoutes=require('./routes/expenseRoutes.js')
 const userRoutes=require('./routes/userRoutes.js')
 
-
 dotenv.config();
-
 app.use(bodyParser.json()); //middleware
 app.use(cors()); //middleware
+
 
 app.use('/expense',expenseRoutes);
 app.use('/user',userRoutes);
